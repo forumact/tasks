@@ -1,0 +1,5 @@
+Programmatically accessing block content
+-------------------------------------------------
+$custom_block = \Drupal::entityTypeManager()->getStorage('block_content')->load('1');
+print_r($custom_block->body->value);die;
+-------------------------------------------------
