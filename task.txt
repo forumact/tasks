@@ -3,3 +3,14 @@ Programmatically accessing block content
 $custom_block = \Drupal::entityTypeManager()->getStorage('block_content')->load('1');
 print_r($custom_block->body->value);die;
 -------------------------------------------------
+
+
+Drupal8 route redirection:
+-------------------------------------------------
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
+$path = \Drupal\Core\Url::fromRoute('domain_site_settings.config_form',
+    ['domain_id' => 'drupal_com'])->toString();
+  $response = new RedirectResponse($path);
+  $response->send();
+-------------------------------------------------
